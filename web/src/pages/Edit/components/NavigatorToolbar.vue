@@ -97,6 +97,7 @@
           <el-dropdown-item command="helpDoc">使用文档</el-dropdown-item>
           <el-dropdown-item command="devDoc">开发文档</el-dropdown-item>
           <el-dropdown-item command="site">官方网站</el-dropdown-item>
+          <el-dropdown-item @click.native="goToSite">AI思维导图</el-dropdown-item>
           <el-dropdown-item command="issue">意见反馈</el-dropdown-item>
           <el-dropdown-item disabled>当前：v{{ version }}</el-dropdown-item>
         </el-dropdown-menu>
@@ -156,6 +157,11 @@ export default {
       this.setIsReadonly(!this.isReadonly)
       this.mindMap.setMode(this.isReadonly ? 'readonly' : 'edit')
     },
+    methods: {
+  goToSite() {
+    window.location.href = 'https://baidu.com';
+  }
+},
 
     toggleMiniMap() {
       this.openMiniMap = !this.openMiniMap
